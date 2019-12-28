@@ -22,7 +22,7 @@ def predict(file):
             return 'K'
         else:
             features = get_MFCC_features(file)
-            model = pickle.load(open('model_evaluate', 'rb'))
+            model = pickle.load(open('model', 'rb'))
             predicted = model.predict([features])
             if predicted[0] == 0:
                 return 'K'
